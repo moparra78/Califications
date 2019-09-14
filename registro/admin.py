@@ -5,14 +5,14 @@ from django.contrib import admin
 from django.contrib import admin
 
 from .models import Question
-from .models import Estudiantes
-from .models import Calificaciones
-from .models import Docentes
-from .models import Materias
+from .models import Estudiante
+from .models import Calificacione
+from .models import Docente
+from .models import Materia
 
 
 admin.site.register(Question)
-admin.site.register(Estudiantes)
-admin.site.register(Calificaciones)
-admin.site.register(Docentes)
-admin.site.register(Materias)
+admin.site.register(Estudiante)
+admin.site.register(Calificacione)
+admin.site.register(Docente)
+admin.site.register(Materia)

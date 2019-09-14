@@ -15,19 +15,19 @@ class Choice(models.Model):
     choice_text = models.CharField(max_length=200)
     votes = models.IntegerField(default=0)
 
-Class Estudiantes(models.Model)
+class Estudiante(models.Model):
     Nombre = models.CharField(max_length=20)
     Apellido = models.CharField(max_length=20)
     Email = models.CharField(max_length=20)
 
-class Calificaciones(models.Model):
+class Calificacione(models.Model):
     Calificacion = models.DecimalField(decimal_places=2, max_digits=3)
     Feca = models.DateTimeField('date published')
 
-Class Docentes(models.Model):
+class Docente(models.Model):
     Nombre = models.CharField(max_length=20)
     Apellido = models.CharField(max_length=20)
     Email = models.CharField(max_length=20)
 
-    Class Materias(models.Model):
+class Materia(models.Model):
     Materia = models.CharField(max_length=20)
