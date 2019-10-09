@@ -15,22 +15,33 @@ from django.db import models
     #choice_text = models.CharField(max_length=200)
     #votes = models.IntegerField(default=0)
 
+class Materia(models.Model):
+    #estudiante = models.ForeignKey(Estudiante, on_delete=models.CASCADE)
+    #docente = models.ForeignKey(Docente, on_delete=models.CASCADE)
+    codigo = models.CharField(max_length=20)
+    nombre = models.CharField(max_length=20)
+    facultad = models.CharField(max_length=20)
+
 class Estudiante(models.Model):
-    Nombre = models.CharField(max_length=20)
-    Apellido = models.CharField(max_length=20)
-    Email = models.CharField(max_length=20)
+    materia = models.ForeignKey(Materia, null=True, on_delete=models.CASCADE)
+    codigo = models.CharField(max_length=20)
+    nombre = models.CharField(max_length=20)
+    apellido = models.CharField(max_length=20)
+    email = models.CharField(max_length=20)
+    direccion = models.CharField(max_length=20)
+    telefono = models.CharField(max_length=20)
+    acudiente = models.CharField(default=' ', max_length=20)
 
 class Calificacione(models.Model):
-    estudiante = models.ForeignKey(Estudiante, on_delete=models.CASCADE)
-    Calificacion = models.DecimalField(decimal_places=2, max_digits=3)
-    Feca = models.DateTimeField('date published')
+    estudiante = models.ForeignKey(Estudiante, null=True, on_delete=models.CASCADE)
+    calificacion = models.DecimalField(decimal_places=2, max_digits=3)
+    fecha = models.DateTimeField('date published')
 
 class Docente(models.Model):
-    Nombre = models.CharField(max_length=20)
-    Apellido = models.CharField(max_length=20)
-    Email = models.CharField(max_length=20)
-
-class Materia(models.Model):
-    estudiante = models.ForeignKey(Estudiante, on_delete=models.CASCADE)
-    docente = models.ForeignKey(Docente, on_delete=models.CASCADE)
-    Materia = models.CharField(max_length=20)
+    materia = models.ForeignKey(Materia, null=True, on_delete=models.CASCADE)
+    codigo = models.CharField(default=1, max_length=20)
+    nombre = models.CharField(max_length=20)
+    apellido = models.CharField(max_length=20)
+    email = models.CharField(max_length=20)
+    facultad = models.CharField(default='Asignada', max_length=20)
+    honorarios = models.IntegerField(default=0)
