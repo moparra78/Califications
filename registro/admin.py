@@ -9,6 +9,7 @@ from .models import Estudiante
 from .models import Calificacione
 from .models import Docente
 from .models import Materia
+from .models import Facultad
 
 
 #admin.site.register(Question)
@@ -16,3 +17,4 @@ admin.site.register(Estudiante)
 admin.site.register(Calificacione)
 admin.site.register(Docente)
 admin.site.register(Materia)
+admin.site.register(Facultad)
