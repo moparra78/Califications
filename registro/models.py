@@ -16,14 +16,11 @@ from django.db import models
     #votes = models.IntegerField(default=0)
 
 class Facultad(models.Model):
-    #materia = models.ForeignKey(Materia, null=True, on_delete=models.CASCADE)
-    #docente = models.ForeignKey(Docente, null=True, on_delete=models.CASCADE)
     codigo = models.CharField(max_length=20)
     nombre = models.CharField(max_length=20)
 
 class Docente(models.Model):
     facultad = models.ForeignKey(Facultad, null=True, on_delete=models.CASCADE)
-    #materia = models.ForeignKey(Materia, null=True, on_delete=models.CASCADE)
     codigo = models.CharField(default=1, max_length=20)
     nombre = models.CharField(max_length=20)
     apellido = models.CharField(max_length=20)
@@ -37,7 +34,6 @@ class Materia(models.Model):
     nombre = models.CharField(max_length=20)
     
 class Estudiante(models.Model):
-    #materia = models.ForeignKey(Materia, null=True, on_delete=models.CASCADE)
     materia = models.ManyToManyField(Materia)
     codigo = models.CharField(max_length=20)
     nombre = models.CharField(max_length=20)
