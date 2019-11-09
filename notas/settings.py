@@ -25,7 +25,7 @@ SECRET_KEY = '-7*#73qbwqesh8^(weqcl$z)2@c11msx=!7(yy^xw@5$yqolnb'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['polar-springs-69805.herokuapp.com','localhost',]
 
 
 # Application definition
